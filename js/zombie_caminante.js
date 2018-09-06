@@ -12,7 +12,6 @@ var ZombieCaminante = function(sprite, x, y, ancho, alto, velocidad, rangoMov) {
 constructor para poder usarla con 'new' al crear nuevos Zombies Caminantes */
 ZombieCaminante.prototype = Object.create(Enemigo.prototype);
 ZombieCaminante.prototype.constructor = ZombieCaminante;
-
 ZombieCaminante.prototype.mover = function() {
   /* Los movimientos estan basados en un numero aleatorio
   La direccion horizontal es siempre la misma y va ondulando verticalmente.

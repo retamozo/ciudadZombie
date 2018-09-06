@@ -20,8 +20,17 @@ var Juego = {
   obstaculosCarretera: [
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
-    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1)
-
+    new Obstaculo('imagenes/valla_horizontal.png', 123, 460, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 90, 430, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 170, 470, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 800, 470, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png',132, 477, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png',344, 375, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png',565, 377, 30, 30, 1),
+    new Obstaculo('imagenes/auto_verde_abajo.png',355,75,15,30,1),
+    new Obstaculo('imagenes/auto_verde_abajo.png',420,245,15,30,1),
+    new Obstaculo('imagenes/auto_verde_derecha.png',855,200,30,15,1),
+    new Obstaculo('imagenes/auto_verde_derecha.png',760,300,30,15,1),
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
@@ -33,19 +42,58 @@ var Juego = {
     new Obstaculo('', 0, 5, 18, 572, 0),
     new Obstaculo('', 943, 5, 18, 572, 0),
     // Veredas
-    new Obstaculo('', 18, 23, 51, 536, 2),
-    new Obstaculo('', 69, 507, 690, 52, 2),
-    new Obstaculo('', 587, 147, 173, 360, 2),
-    new Obstaculo('', 346, 147, 241, 52, 2),
-    new Obstaculo('', 196, 267, 263, 112, 2),
-    new Obstaculo('', 196, 23, 83, 244, 2),
-    new Obstaculo('', 279, 23, 664, 56, 2),
-    new Obstaculo('', 887, 79, 56, 480, 2)
+    new Obstaculo('', 18, 23, 51, 536, 1),
+    new Obstaculo('', 69, 507, 690, 52, 1),
+    new Obstaculo('', 587, 147, 173, 360, 1),
+    new Obstaculo('', 346, 147, 241, 52, 1),
+    new Obstaculo('', 196, 267, 263, 112, 1),
+    new Obstaculo('', 196, 23, 83, 244, 1),
+    new Obstaculo('', 279, 23, 664, 56, 1),
+    new Obstaculo('', 887, 79, 56, 480, 1)
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
+    new ZombieConductor ('imagenes/tren_vertical.png', 644,0,30, 90, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0},),
+    new ZombieConductor ('imagenes/tren_vertical1.png', 678,0,30, 90, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0},),
+    new ZombieConductor ('imagenes/tren_horizontal.png', 400,322,90, 30, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0},),
 
-  ]
+
+    //Horda 1
+    new ZombieCaminante ('imagenes/zombie1.png', 500,500,15,15,3,{desdeX: 299, hastaX: 0, desdeY: 500, hastaY: 111}),
+    new ZombieCaminante ('imagenes/zombie1.png', 300,143,15,15,3, {desdeX: 234, hastaX: 855, desdeY: 977, hastaY: 322 }),
+    new ZombieCaminante ('imagenes/zombie2.png', 344,345,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 347,465,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie2.png', 351,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 360,465,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 358,450,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie4.png', 363,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 351,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 351,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 361,443,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    //Horda 2
+    new ZombieCaminante ('imagenes/zombie2.png', 444,245,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 447,265,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie2.png', 451,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 460,265,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 458,250,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie4.png', 463,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 451,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 451,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 461,243,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    //horda 3
+    new ZombieCaminante ('imagenes/zombie2.png', 544,145,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 547,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie2.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 560,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 558,150,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie4.png', 563,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie3.png', 561,143,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+
+
+      ]
+
 
 }
 
@@ -61,6 +109,8 @@ Juego.iniciarRecursos = function() {
     'imagenes/bache.png',
     'imagenes/tren_horizontal.png',
     'imagenes/tren_vertical.png',
+    'imagenes/tren_vertical1.png',
+
     'imagenes/valla_horizontal.png',
     'imagenes/valla_vertical.png',
     'imagenes/zombie1.png',
@@ -117,35 +167,38 @@ Juego.capturarMovimiento = function(tecla) {
     movX = -velocidad;
     Jugador.sprite = 'imagenes/auto_rojo_izquierda.png'
     Jugador.ancho = 30;
-    Jugador.alto = 15; 
+    Jugador.alto = 15;
   }
   if (tecla == 'arriba') {
     movY = -velocidad;
     Jugador.sprite = 'imagenes/auto_rojo_arriba.png'
     Jugador.ancho = 15;
-    Jugador.alto = 30; 
+    Jugador.alto = 30;
   }
   if (tecla == 'der') {
     movX = velocidad;
     Jugador.sprite = 'imagenes/auto_rojo_derecha.png'
     Jugador.ancho = 30;
-    Jugador.alto = 15; 
+    Jugador.alto = 15;
   }
   if (tecla == 'abajo') {
     movY = velocidad;
     Jugador.sprite = 'imagenes/auto_rojo_abajo.png'
     Jugador.ancho = 15;
-    Jugador.alto = 30; 
+    Jugador.alto = 30;
   }
 
   // Si se puede mover hacia esa posicion hay que hacer efectivo este movimiento
   if (this.chequearColisiones(movX + this.jugador.x, movY + this.jugador.y)) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
-    de sus metodos  */
-Jugador.movimintos(movX,movY);
+    de sus metodos
     /* COMPLETAR */
+    Jugador.movimintos(movX,movY);
+    //if (Jugador.perderVidas = true) {
+
+    //}
   }
-};
+}
 
 Juego.dibujar = function() {
   // Borrar el fotograma actual
@@ -168,6 +221,8 @@ Juego.dibujar = function() {
   // Se recorren los enemigos pintandolos
   this.enemigos.forEach(function(enemigo) {
     /* Completar */
+    Dibujante.dibujarEntidad(enemigo);
+
   });
 
   // El dibujante dibuja las vidas del jugador
@@ -186,6 +241,9 @@ un recorrido por los enemigos para dibujarlos en pantalla ahora habra que hacer
 una funcionalidad similar pero para que se muevan.*/
 Juego.moverEnemigos = function() {
   /* COMPLETAR */
+  this.enemigos.forEach(function(enemigo){
+    enemigo.mover();
+  });
 };
 
 /* Recorre los enemigos para ver cual esta colisionando con el jugador
@@ -212,9 +270,8 @@ Juego.chequearColisiones = function(x, y) {
   var puedeMoverse = true
   this.obstaculos().forEach(function(obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
-
-      /*COMPLETAR, obstaculo debe chocar al jugador*/
-
+         /*COMPLETAR, obstaculo debe chocar al jugador*/
+        obstaculo.chocar(this.jugador);
       puedeMoverse = false
     }
   }, this)

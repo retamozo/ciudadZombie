@@ -10,11 +10,14 @@ var Jugador = {
   alto: 30,
   velocidad: 16,
   vidas: 5,
-  movimintos: function ( movX, movY ){
+    movimintos: function ( movX, movY ){
     this.x += movX;
     this.y += movY;
+  },
+    perderVidas: function(cantVidas){
+    this.vidas -= cantVidas;
+    console.log("te quedan " + this.vidas);
   }
-  
 }
 
   // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
