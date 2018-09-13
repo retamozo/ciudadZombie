@@ -33,8 +33,8 @@ var Juego = {
     new Obstaculo('imagenes/auto_verde_derecha.png',760,300,30,15,1),
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
-   Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
-   que son invisibles. No tenes que preocuparte por ellos.*/
+  Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
+  que son invisibles. No tenes que preocuparte por ellos.*/
   bordes: [
     // // Bordes
     new Obstaculo('', 0, 5, 961, 18, 0),
@@ -53,46 +53,42 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-    new ZombieConductor ('imagenes/tren_vertical.png', 644,0,30, 90, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0},),
-    new ZombieConductor ('imagenes/tren_vertical1.png', 678,0,30, 90, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0},),
-    new ZombieConductor ('imagenes/tren_horizontal.png', 400,322,90, 30, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0},),
+    new ZombieConductor ('imagenes/tren_vertical.png',  644, 0, 30, 90, 3, {desdeX: 0, hastaX: 995, desdeY: -60, hastaY: 650},"v"),
+    new ZombieConductor ('imagenes/tren_vertical1.png', 674, 0, 30, 90, 3, {desdeX: 0, hastaX: 995, desdeY: -60, hastaY: 650},"v"),
+    new ZombieConductor ('imagenes/tren_horizontal.png',400, 322, 90, 30, 3, {desdeX: -120, hastaX:990, desdeY: 0, hastaY: 597},"h"),
 
 
     //Horda 1
-    new ZombieCaminante ('imagenes/zombie1.png', 500,500,15,15,3,{desdeX: 299, hastaX: 0, desdeY: 500, hastaY: 111}),
-    new ZombieCaminante ('imagenes/zombie1.png', 300,143,15,15,3, {desdeX: 234, hastaX: 855, desdeY: 977, hastaY: 322 }),
-    new ZombieCaminante ('imagenes/zombie2.png', 344,345,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 347,465,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie2.png', 351,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie1.png', 360,465,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 358,450,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie4.png', 363,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 351,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie1.png', 351,433,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 361,443,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    //Horda 2
-    new ZombieCaminante ('imagenes/zombie2.png', 444,245,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 447,265,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie2.png', 451,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie1.png', 460,265,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 458,250,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie4.png', 463,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 451,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie1.png', 451,233,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 461,243,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    new ZombieCaminante ('imagenes/zombie1.png', 20,20,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0 , hastaY:290}),
+    new ZombieCaminante ('imagenes/zombie1.png', 300,143,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 390}),
+    new ZombieCaminante ('imagenes/zombie2.png', 344,345,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 490}),
+    new ZombieCaminante ('imagenes/zombie3.png', 447,465,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 590}),
+    new ZombieCaminante ('imagenes/zombie2.png', 551,433,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 690}),
+
+    new ZombieCaminante ('imagenes/zombie3.png', 361,443,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 290}),
+    // //Horda 2
+    // new ZombieCaminante ('imagenes/zombie2.png', 544,245,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 547,265,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie2.png', 551,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie1.png', 560,265,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 558,250,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie4.png', 563,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 551,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie1.png', 551,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 561,243,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
     //horda 3
-    new ZombieCaminante ('imagenes/zombie2.png', 544,145,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 547,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie2.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie1.png', 560,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 558,150,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie4.png', 563,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie1.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    new ZombieCaminante ('imagenes/zombie3.png', 561,143,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie2.png', 544,145,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 547,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie2.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie1.png', 560,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 558,150,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie4.png', 563,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie1.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
+    // new ZombieCaminante ('imagenes/zombie3.png', 561,143,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
 
 
-      ]
+  ]
 
 
 }
@@ -265,13 +261,13 @@ Juego.calcularAtaques = function() {
 
 
 /* Aca se chequea si el jugador se peude mover a la posicion destino.
- Es decir, que no haya obstaculos que se interpongan. De ser asi, no podra moverse */
+Es decir, que no haya obstaculos que se interpongan. De ser asi, no podra moverse */
 Juego.chequearColisiones = function(x, y) {
   var puedeMoverse = true
   this.obstaculos().forEach(function(obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
-         /*COMPLETAR, obstaculo debe chocar al jugador*/
-        obstaculo.chocar(this.jugador);
+      /*COMPLETAR, obstaculo debe chocar al jugador*/
+      obstaculo.chocar(this.jugador);
       puedeMoverse = false
     }
   }, this)
@@ -279,7 +275,7 @@ Juego.chequearColisiones = function(x, y) {
 };
 
 /* Este metodo chequea si los elementos 1 y 2 si cruzan en x e y
- x e y representan la coordenada a la cual se quiere mover el elemento2*/
+x e y representan la coordenada a la cual se quiere mover el elemento2*/
 Juego.intersecan = function(elemento1, elemento2, x, y) {
   var izquierda1 = elemento1.x
   var derecha1 = izquierda1 + elemento1.ancho
@@ -291,7 +287,7 @@ Juego.intersecan = function(elemento1, elemento2, x, y) {
   var piso2 = y + elemento2.alto
 
   return ((piso1 >= techo2) && (techo1 <= piso2) &&
-    (derecha1 >= izquierda2) && (izquierda1 <= derecha2))
+  (derecha1 >= izquierda2) && (izquierda1 <= derecha2))
 };
 
 Juego.dibujarFondo = function() {
