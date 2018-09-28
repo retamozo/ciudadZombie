@@ -16,9 +16,5 @@ var Jugador = {
   },
     perderVidas: function(cantVidas){
     this.vidas -= cantVidas;
-    console.log("te quedan " + this.vidas);
   }
 }
-
-  // Hay que agregar lo que falte al jugador: movimientos, perdida de vidas,
-  // y todo lo que haga falta para que cumpla con sus responsabilidades

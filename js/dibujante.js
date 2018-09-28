@@ -7,6 +7,7 @@ var Dibujante = {
   canvas: document.createElement('canvas'),
 
   borrarAreaDeJuego: function () {
+    
     this.canvas.getContext('2d').clearRect(0, 0, this.canvas.width, this.canvas.height);
   },
 

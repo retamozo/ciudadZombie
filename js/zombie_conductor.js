@@ -7,7 +7,7 @@ del ZombieCaminante que eran los mismos. */
 var ZombieConductor = function(sprite, x, y, ancho, alto, velocidad, rangoMov, direccion ) {
   //, parametro/s extra de ZombieConductor*/) {
   /* Completar constructor a partir de Enemigo */
-  Enemigo.call(this, sprite, x, y, ancho, alto, velocidad, rangoMov);
+  Enemigo.call(this, sprite, x, y, ancho, alto, velocidad, rangoMov, direccion);
   this.direccion = direccion;
   /* No olvidar agregar la/s propiedad/es unicas de ZombieConductor necesarias */
 }
@@ -15,27 +15,21 @@ var ZombieConductor = function(sprite, x, y, ancho, alto, velocidad, rangoMov, d
 ZombieConductor.prototype=Object.create(Enemigo.prototype);
 ZombieConductor.prototype.constructor=ZombieConductor;
 ZombieConductor.prototype.mover = function() {
-  if (direccion="h") {
-    this.x -= this.velocidad;
-
-    // this.x -= this.velocidad;
+  if (this.direccion=="v") {
+    this.y -= this.velocidad;
+    if ((this.y < this.rangoMov.desdeY) || (this.y > this.rangoMov.hastaY)) {
+      this.y = this.rangoMov.desdeY + (this.rangoMov.hastaY - this.rangoMov.desdeY);
+    }
   } else  {
-  
     //Sino, hace otro movimiento
-    this.y += this.velocidad;
-
-  }
-  // if ((this.x <this.rangoMov.desdeX) || (this.x > this.rangoMov.hastaX)){
-  //    this.velocidad *= -1;
-  if ((this.x < this.rangoMov.desdeX) || (this.x > this.rangoMov.hastaX)) {
-    this.x = this.rangoMov.desdeX + (this.rangoMov.hastaX - this.rangoMov.desdeX);
-  }
-  // Si sobrepasa el rangoY, lo manda al centro entre ambos rangos
-  if ((this.y < this.rangoMov.desdeY) || (this.y > this.rangoMov.hastaY)) {
-    this.y = this.rangoMov.desdeY + (this.rangoMov.hastaY - this.rangoMov.desdeY);
+    this.x -= this.velocidad;
+    if ((this.x < this.rangoMov.desdeX) || (this.x > this.rangoMov.hastaX)) {
+      this.x = this.rangoMov.desdeX + (this.rangoMov.hastaX - this.rangoMov.desdeX);
+    }
   }
 
 }
-/* Completar creacion del ZombieConductor */
 
-/* Completar metodos para el movimiento y el ataque */
+ZombieConductor.prototype.atacar = function(){
+  Jugador.perderVidas(5)
+}

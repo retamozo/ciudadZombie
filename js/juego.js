@@ -16,7 +16,7 @@ var Juego = {
   vidasInicial: Jugador.vidas,
   // Indica si el jugador gano
   ganador: false,
-
+  //animationFrame:  null,
   obstaculosCarretera: [
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
@@ -53,42 +53,20 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-    new ZombieConductor ('imagenes/tren_vertical.png',  644, 0, 30, 90, 3, {desdeX: 0, hastaX: 995, desdeY: -60, hastaY: 650},"v"),
-    new ZombieConductor ('imagenes/tren_vertical1.png', 674, 0, 30, 90, 3, {desdeX: 0, hastaX: 995, desdeY: -60, hastaY: 650},"v"),
-    new ZombieConductor ('imagenes/tren_horizontal.png',400, 322, 90, 30, 3, {desdeX: -120, hastaX:990, desdeY: 0, hastaY: 597},"h"),
-
-
-    //Horda 1
-    new ZombieCaminante ('imagenes/zombie1.png', 20,20,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0 , hastaY:290}),
-    new ZombieCaminante ('imagenes/zombie1.png', 300,143,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 390}),
-    new ZombieCaminante ('imagenes/zombie2.png', 344,345,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 490}),
-    new ZombieCaminante ('imagenes/zombie3.png', 447,465,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 590}),
-    new ZombieCaminante ('imagenes/zombie2.png', 551,433,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 690}),
-
-    new ZombieCaminante ('imagenes/zombie3.png', 361,443,10,10,2, {desdeX: 0, hastaX: 995, desdeY:0, hastaY: 290}),
-    // //Horda 2
-    // new ZombieCaminante ('imagenes/zombie2.png', 544,245,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 547,265,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie2.png', 551,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie1.png', 560,265,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 558,250,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie4.png', 563,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 551,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie1.png', 551,233,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 561,243,15,15,3,  {desdeX: -55, hastaX: 995, desdeY:260, hastaY: 290}),
-    //horda 3
-    // new ZombieCaminante ('imagenes/zombie2.png', 544,145,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 547,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie2.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie1.png', 560,165,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 558,150,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie4.png', 563,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie1.png', 551,133,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-    // new ZombieCaminante ('imagenes/zombie3.png', 561,143,15,15,3, {desdeX: 0, hastaX: 0, desdeY: 0, hastaY: 0}),
-
-
-  ]
+    new ZombieConductor ('imagenes/tren_vertical.png',  644, 0, 30, 90, 4, {desdeX: 0, hastaX: 995, desdeY: -60, hastaY: 650},"v"),
+    new ZombieConductor ('imagenes/tren_vertical1.png', 674, 0, 30, 90, 4, {desdeX: 0, hastaX: 995, desdeY: -60, hastaY: 650},"v"),
+    new ZombieConductor ('imagenes/tren_horizontal.png',400, 322, 90, 30, 5, {desdeX: -120, hastaX:990, desdeY: 0, hastaY: 597},"h"),
+    new ZombieCaminante ('imagenes/zombie1.png', 0, 0, 10, 10, 2,      {desdeX: 00, hastaX: 999, desdeY:280, hastaY: 290},),
+    new ZombieCaminante ('imagenes/zombie1.png', 90, 278, 10, 10, 1,   {desdeX: 0, hastaX: 995, desdeY:380, hastaY: 390}),
+    new ZombieCaminante ('imagenes/zombie2.png', 168, 351, 10, 10, 3,  {desdeX: 0, hastaX: 995, desdeY:480, hastaY: 490}),
+    new ZombieCaminante ('imagenes/zombie3.png', 244, 401, 20, 20, 2.5,{desdeX: 0, hastaX: 995, desdeY:580, hastaY: 590}),
+    new ZombieCaminante ('imagenes/zombie2.png', 333, 511, 10, 10, 2,  {desdeX: 0, hastaX: 995, desdeY:680, hastaY: 690}),
+    new ZombieCaminante ('imagenes/zombie3.png', 361,843,10,10,3.1,    {desdeX: 0, hastaX: 995, desdeY:280, hastaY: 290}),
+    new ZombieCaminante ('imagenes/zombie2.png', 544,45,10,10,3,     {desdeX: 0, hastaX: 995, desdeY:260, hastaY: 290}),
+    new ZombieCaminante ('imagenes/zombie3.png', 676,345,10,10,3,     {desdeX: 0, hastaX: 995, desdeY:380, hastaY: 390}),
+    new ZombieCaminante ('imagenes/zombie2.png', 756,767,10,10,3,    {desdeX: 0, hastaX: 995, desdeY:460, hastaY: 470}),
+    new ZombieCaminante ('imagenes/zombie1.png', 888,888,10,10,3,    {desdeX: 0, hastaX: 995, desdeY:80, hastaY: 90}),
+]
 
 
 }
@@ -106,7 +84,6 @@ Juego.iniciarRecursos = function() {
     'imagenes/tren_horizontal.png',
     'imagenes/tren_vertical.png',
     'imagenes/tren_vertical1.png',
-
     'imagenes/valla_horizontal.png',
     'imagenes/valla_vertical.png',
     'imagenes/zombie1.png',
@@ -138,13 +115,17 @@ Juego.comenzar = function() {
 };
 
 Juego.buclePrincipal = function() {
+if (this.terminoJuego()||this.ganoJuego()){
+  this.dibujarFondo();
 
+} else {
   // Con update se actualiza la logica del juego, tanto ataques como movimientos
   this.update();
   // Funcion que dibuja por cada fotograma a los objetos en pantalla.
   this.dibujar();
   // Esto es una forma de llamar a la funcion Juego.buclePrincipal() repetidas veces
-  window.requestAnimationFrame(this.buclePrincipal.bind(this));
+   window.requestAnimationFrame(this.buclePrincipal.bind(this));
+}
 };
 
 Juego.update = function() {
@@ -203,6 +184,8 @@ Juego.dibujar = function() {
   this.dibujarFondo();
 
 
+
+
   /* Aca hay que agregar la logica para poder dibujar al jugador principal
   utilizando al dibujante y los metodos que nos brinda.
   "Dibujante dibuja al jugador" */
@@ -251,9 +234,11 @@ Juego.calcularAtaques = function() {
     if (this.intersecan(enemigo, this.jugador, this.jugador.x, this.jugador.y)) {
       /* Si el enemigo colisiona debe empezar su ataque
       COMPLETAR */
+      enemigo.comenzarAtaque(this.jugador);
     } else {
       /* Sino, debe dejar de atacar
       COMPLETAR */
+      enemigo.dejarDeAtacar(this.jugador);
     }
   }, this);
 };
@@ -293,12 +278,17 @@ Juego.intersecan = function(elemento1, elemento2, x, y) {
 Juego.dibujarFondo = function() {
   // Si se termino el juego hay que mostrar el mensaje de game over de fondo
   if (this.terminoJuego()) {
+
+    Dibujante.borrarAreaDeJuego();
     Dibujante.dibujarImagen('imagenes/mensaje_gameover.png', 0, 5, this.anchoCanvas, this.altoCanvas);
     document.getElementById('reiniciar').style.visibility = 'visible';
+
+
   }
 
   // Si se gano el juego hay que mostrar el mensaje de ganoJuego de fondo
   else if (this.ganoJuego()) {
+    Dibujante.borrarAreaDeJuego();
     Dibujante.dibujarImagen('imagenes/Splash.png', 190, 113, 500, 203);
     document.getElementById('reiniciar').style.visibility = 'visible';
   } else {
